@@ -30,6 +30,12 @@ async function fetchTickets() {
         // Show error message if fetch fails
         errorMessageSection.style.display = 'block';
         errorMessageSection.textContent = error.message;
-    }
 
+    } finally {
+        // TASK 4 - Ensure cleanup (e.g., hiding a loading message if added)
+        console.log("Fetch attempt finished"); // Add any other cleanup code if needed
+    }
 }
+
+// Call fetchTickets function when the page loads
+window.addEventListener('load', fetchTickets);
